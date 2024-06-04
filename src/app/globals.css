@@ -1,0 +1,221 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+.backgroundSignup{
+  background-color: #8895B3;
+  background-image: url('../../public/Group\ 163background.svg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.card {
+  width: screen;
+  height: screen !important;
+  background: rgba(114,113,114);
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0px 0px 1px black;
+  transition: all .2s ease-in;
+}
+
+.card::after {
+  content: "hover video";
+  font-size: 1.4em;
+  font-weight: 800;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%,-50%);
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.up .right {
+  display: flex;
+  gap: 20px;
+}
+
+.playbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.bar {
+  width: 340px;
+  height: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(170, 163, 163, 0.356);
+}
+
+.bar::after {
+  content: "";
+  width: 10px;
+  height: 8px;
+  position: absolute;
+  background: rgb(167, 57, 57);
+  animation: example 25s ease;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.down__icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pause {
+  width: 50px;
+  height: 50px;
+  fill: rgb(241, 239, 239);
+}
+
+.time {
+  font-size: .85em;
+}
+
+.svg-icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  ;
+  fill: rgb(241, 239, 239);
+}
+
+.card * {
+  opacity: 0;
+  transition: all .2s ease-in;
+}
+
+.card:hover * {
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow: inset 0px 10px 36px -13px rgba(0,0,0,0.75);
+}
+
+.svg-icon:hover {
+  background-color: rgba(3, 5, 5, 0.5);
+}
+
+@keyframes example {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 330px;
+  }
+}
+.cameraContainer {
+  width: 100%; /* Full width of the parent container */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid black;
+   /* Hide overflow to prevent scrolling */
+}
+
+.cameraFrame {
+  width: 100%; /* Full width of the parent container */
+  height: 100%; /* Full height of the parent container */
+  border: none; /* Remove iframe border */
+}
